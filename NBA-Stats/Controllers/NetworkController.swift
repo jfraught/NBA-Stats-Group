@@ -10,7 +10,7 @@ import CoreData
 
 struct NetworkController {
     private static var url = "https://api.balldontlie.io/v1"
-    private static var apiKey = "" // Add your API key here
+    private static var apiKey = "07315869-8fe7-4d07-a1ae-55976bb4110c"
     
     static func getTeams() async throws -> [Team] {
         // Initialize our session and url
