@@ -18,6 +18,8 @@ class TeamsTableViewController: UITableViewController {
                 tableView.reloadData()
             } catch {
                 print(error)
+                print("remove me")
+                // hi
             }
         }
     }
