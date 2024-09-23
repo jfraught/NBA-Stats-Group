@@ -19,6 +19,7 @@ class TeamsTableViewController: UITableViewController {
             } catch {
                 print(error)
                 print("remove me")
+                print("remove me again")
                 // hi
             }
         }
