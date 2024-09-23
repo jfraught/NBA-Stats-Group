@@ -21,15 +21,20 @@ class PlayerDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let player = player else { return }
-
+        guard let player = player else {
+            print("Player is nil")
+            return
+        }
+        
+        print("Displaying details for: \(player.first_name ?? "N/A") \(player.last_name ?? "N/A")") // Debugging print
+        
         playerDetails = [
             ("First Name", player.first_name ?? "No first name found"),
             ("Last Name", player.last_name ?? "No last name found"),
             ("Position", player.position ?? "Player Position Unavailable"),
             ("Height", player.height ?? "Could not find player height"),
             ("Weight", player.weight ?? "Could not find player weight"),
-            ("Jersey Number", player.jersey_number ?? "N/A"), // Use ?? "N/A" for optional values
+            ("Jersey Number", player.jersey_number ?? "N/A"),
             ("College", player.college ?? "N/A"),
             ("Country", player.country ?? "N/A"),
             ("Draft Year", player.draft_year != 0 ? "\(player.draft_year)" : "N/A"),
@@ -42,10 +47,10 @@ class PlayerDetailTableViewController: UITableViewController {
 
 
 
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 

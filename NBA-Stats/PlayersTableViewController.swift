@@ -51,6 +51,21 @@ class PlayersTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPlayerDetail",
+           let destinationVC = segue.destination as? PlayerDetailTableViewController,
+           let selectedIndexPath = tableView.indexPathForSelectedRow {
+            
+            let selectedPlayer = players?[selectedIndexPath.row]
+            print("Selected Player: \(selectedPlayer?.first_name ?? "N/A") \(selectedPlayer?.last_name ?? "N/A")")
+            // Debugging print
+            
+            destinationVC.player = selectedPlayer
+        }
+    }
+
+
 
     /*
     // Override to support conditional editing of the table view.
