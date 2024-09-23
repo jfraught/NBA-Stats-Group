@@ -22,6 +22,7 @@
 		A379CC762B9F6227005D9F8B /* TeamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC752B9F6227005D9F8B /* TeamsTableViewController.swift */; };
 		A379CC782BA09916005D9F8B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC772BA09916005D9F8B /* Player.swift */; };
 		A379CC7A2BA0A197005D9F8B /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */; };
+		FD3EFF312CA1B7A700248C56 /* PlayerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A379CC752B9F6227005D9F8B /* TeamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewController.swift; sourceTree = "<group>"; };
 		A379CC772BA09916005D9F8B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
+		FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				A379CC502B9A1BEF005D9F8B /* SceneDelegate.swift */,
 				A379CC752B9F6227005D9F8B /* TeamsTableViewController.swift */,
 				A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */,
+				FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */,
 				A379CC542B9A1BEF005D9F8B /* Main.storyboard */,
 				A379CC5C2B9A1BF1005D9F8B /* LaunchScreen.storyboard */,
 				A379CC5A2B9A1BF1005D9F8B /* Assets.xcassets */,
@@ -185,6 +188,7 @@
 				A379CC762B9F6227005D9F8B /* TeamsTableViewController.swift in Sources */,
 				A379CC672B9A682A005D9F8B /* CoreDataStack.swift in Sources */,
 				A379CC702B9B5E1C005D9F8B /* BallDontLieResult.swift in Sources */,
+				FD3EFF312CA1B7A700248C56 /* PlayerDetailTableViewController.swift in Sources */,
 				A379CC6C2B9A6BBA005D9F8B /* Team.swift in Sources */,
 				A379CC692B9A692D005D9F8B /* NetworkController.swift in Sources */,
 				A379CC742B9B6436005D9F8B /* DataController.swift in Sources */,

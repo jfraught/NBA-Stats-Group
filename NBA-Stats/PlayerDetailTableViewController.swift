@@ -1,49 +1,68 @@
 //
-//  TeamsTableViewController.swift
+//  PlayerDetailTableViewController.swift
 //  NBA-Stats
 //
-//  Created by Brayden Lemke on 3/11/24.
+//  Created by Derek Stengel on 9/23/24.
 //
+
+//let detailVC = PlayerDetailTableViewController()
+//detailVC.player = selectedPlayer // Pass the Player instance here
+//navigationController?.pushViewController(detailVC, animated: true)
+
+// add this code to navigate from PlayerDetailTableViewController and populate players properly
 
 import UIKit
 
-class TeamsTableViewController: UITableViewController {
-    var teams: [Team] = []
+class PlayerDetailTableViewController: UITableViewController {
+    var player: Player?
+    
+    var playerDetails: [(title: String, value: String)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Task {
-            do {
-                teams = try await DataController.getTeams()
-                tableView.reloadData()
-            } catch {
-                print(error)
-            }
-        }
+        
+        guard let player = player else { return }
+
+        playerDetails = [
+            ("First Name", player.first_name ?? "No first name found"),
+            ("Last Name", player.last_name ?? "No last name found"),
+            ("Position", player.position ?? "Player Position Unavailable"),
+            ("Height", player.height ?? "Could not find player height"),
+            ("Weight", player.weight ?? "Could not find player weight"),
+            ("Jersey Number", player.jersey_number ?? "N/A"), // Use ?? "N/A" for optional values
+            ("College", player.college ?? "N/A"),
+            ("Country", player.country ?? "N/A"),
+            ("Draft Year", player.draft_year != 0 ? "\(player.draft_year)" : "N/A"),
+            ("Draft Round", player.draft_round != 0 ? "\(player.draft_round)" : "N/A"),
+            ("Draft Number", player.draft_number != 0 ? "\(player.draft_number)" : "N/A")
+        ]
+        
+        tableView.reloadData()
     }
+
+
 
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return teams.count
+        return playerDetails.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
-        let team = teams[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playerDetail", for: indexPath)
         
-        // Configure the cell...
-        cell.textLabel?.text = team.full_name
+        let detail = playerDetails[indexPath.row]
+        cell.textLabel?.text = detail.title
+        cell.detailTextLabel?.text = detail.value
 
         return cell
     }
-    
-    @IBSegueAction func playersSegue(_ coder: NSCoder) -> PlayersTableViewController? {
-        return PlayersTableViewController(team: teams[tableView.indexPathForSelectedRow!.row], coder: coder)
-    }
-    
     
     /*
     // Override to support conditional editing of the table view.
