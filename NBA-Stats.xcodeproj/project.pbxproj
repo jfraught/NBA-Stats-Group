@@ -118,13 +118,45 @@
 		A9877E782CA455AB002C60A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A9877E7B2CA45607002C60A6 /* FavoritesTableViewController.swift */,
-				A9877E792CA455F0002C60A6 /* GamesTableViewController.swift */,
-				FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */,
-				A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */,
-				A379CC752B9F6227005D9F8B /* TeamsTableViewController.swift */,
+				FD3EFF362CA45B3900248C56 /* Teams */,
+				FD3EFF372CA45B4800248C56 /* Games */,
+				FD3EFF382CA45B4E00248C56 /* Favorites */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FD3EFF352CA45B2700248C56 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */,
+				FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		FD3EFF362CA45B3900248C56 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				A379CC752B9F6227005D9F8B /* TeamsTableViewController.swift */,
+				FD3EFF352CA45B2700248C56 /* Player */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		FD3EFF372CA45B4800248C56 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				A9877E792CA455F0002C60A6 /* GamesTableViewController.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		FD3EFF382CA45B4E00248C56 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				A9877E7B2CA45607002C60A6 /* FavoritesTableViewController.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
