@@ -58,8 +58,6 @@ class PlayersTableViewController: UITableViewController {
            let selectedIndexPath = tableView.indexPathForSelectedRow {
             
             let selectedPlayer = players?[selectedIndexPath.row]
-            print("Selected Player: \(selectedPlayer?.first_name ?? "N/A") \(selectedPlayer?.last_name ?? "N/A")")
-            // Debugging print
             
             destinationVC.player = selectedPlayer
         }

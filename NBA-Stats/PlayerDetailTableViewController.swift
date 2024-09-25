@@ -26,8 +26,6 @@ class PlayerDetailTableViewController: UITableViewController {
             return
         }
         
-        print("Displaying details for: \(player.first_name ?? "N/A") \(player.last_name ?? "N/A")") // Debugging print
-        
         playerDetails = [
             ("First Name", player.first_name ?? "No first name found"),
             ("Last Name", player.last_name ?? "No last name found"),
@@ -44,10 +42,7 @@ class PlayerDetailTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
-
-
-
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,7 +53,6 @@ class PlayerDetailTableViewController: UITableViewController {
         return playerDetails.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerDetail", for: indexPath)
         
