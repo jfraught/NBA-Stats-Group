@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g6y-q6-c1V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zaD-h4-VZr">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
@@ -47,7 +47,99 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ji5-Os-LRq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="-4"/>
+            <point key="canvasLocation" x="1959.5419847328244" y="-4.2253521126760569"/>
+        </scene>
+        <!--Games-->
+        <scene sceneID="eDG-Q2-b8g">
+            <objects>
+                <tableViewController id="SMg-6D-3NY" customClass="GamesTableViewController" customModule="NBA_Stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="G49-N5-e2d">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameCell" id="4dn-tU-hzg">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4dn-tU-hzg" id="eef-M5-4mf">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SMg-6D-3NY" id="yaX-IH-g3s"/>
+                            <outlet property="delegate" destination="SMg-6D-3NY" id="a3X-3U-g95"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Games" id="8ix-fz-iPP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1n-pz-iW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959.5419847328244" y="721.83098591549299"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="utp-Mr-wV7">
+            <objects>
+                <tableViewController id="boY-Ks-531" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pZs-0w-n8d">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteCell" id="OAU-lt-NRp">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OAU-lt-NRp" id="0p4-nL-RD8">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="boY-Ks-531" id="FpS-Mm-ZHO"/>
+                            <outlet property="delegate" destination="boY-Ks-531" id="x7a-e6-beI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorites" id="d2g-an-CfU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2g-GT-4f6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959.5419847328244" y="1453.5211267605634"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="kBB-Wk-WIa">
+            <objects>
+                <navigationController id="TAT-LC-51G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="t7P-XY-mgp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKP-I0-YKk">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="boY-Ks-531" kind="relationship" relationship="rootViewController" id="G0C-6W-LG2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KfI-ba-7cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="1454"/>
+        </scene>
+        <!--Games-->
+        <scene sceneID="wHJ-2i-xO3">
+            <objects>
+                <navigationController id="Otw-vh-3RB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Games" image="basket" catalog="system" id="aM6-L9-FJ6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="79c-zj-WMW">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SMg-6D-3NY" kind="relationship" relationship="rootViewController" id="wWK-UY-os0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJx-C3-9n5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="721.83098591549299"/>
         </scene>
         <!--Players-->
         <scene sceneID="wjP-rh-QG1">
@@ -88,7 +180,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R31-gs-DjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="-4"/>
+            <point key="canvasLocation" x="2852.6717557251909" y="-4.2253521126760569"/>
         </scene>
         <!--Player Detail Table View Controller-->
         <scene sceneID="8en-Zl-wBa">
@@ -133,12 +225,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBD-5X-WEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="-4"/>
+            <point key="canvasLocation" x="3701.5267175572517" y="-4.2253521126760569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Teams-->
         <scene sceneID="ocY-jh-l4h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g6y-q6-c1V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Teams" image="basketball" catalog="system" id="kO0-O1-efy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W2R-bE-wei">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -154,10 +247,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI3-b9-aHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-3.5211267605633805"/>
+            <point key="canvasLocation" x="1057.2519083969464" y="-3.5211267605633805"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vsl-Ks-oOl">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zaD-h4-VZr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S2P-6D-0Rg">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="g6y-q6-c1V" kind="relationship" relationship="viewControllers" id="AYM-Qr-ElA"/>
+                        <segue destination="Otw-vh-3RB" kind="relationship" relationship="viewControllers" id="zAh-dk-PGI"/>
+                        <segue destination="TAT-LC-51G" kind="relationship" relationship="viewControllers" id="CtJ-5Q-SLn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yg9-TW-lGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="724.64788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <image name="basket" catalog="system" width="128" height="108"/>
+        <image name="basketball" catalog="system" width="128" height="123"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
