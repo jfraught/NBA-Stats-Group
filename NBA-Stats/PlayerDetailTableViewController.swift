@@ -21,6 +21,12 @@ class PlayerDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let player = player {
+                self.navigationItem.title = "\(player.first_name ?? "") \(player.last_name ?? "")"
+            } else {
+                self.navigationItem.title = "Player Details"
+            }
+        
         guard let player = player else {
             print("Player is nil")
             return
