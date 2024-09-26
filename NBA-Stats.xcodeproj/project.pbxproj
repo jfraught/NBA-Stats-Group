@@ -111,8 +111,8 @@
 			children = (
 				A379CC6B2B9A6BBA005D9F8B /* Team.swift */,
 				A379CC772BA09916005D9F8B /* Player.swift */,
-				A379CC6D2B9B5B88005D9F8B /* Errors.swift */,
 				C59422BE2CA5A19A0066AC9E /* Game.swift */,
+				A379CC6D2B9B5B88005D9F8B /* Errors.swift */,
 				A379CC6F2B9B5E1C005D9F8B /* BallDontLieResult.swift */,
 			);
 			path = Models;

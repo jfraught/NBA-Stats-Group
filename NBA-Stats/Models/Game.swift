@@ -8,47 +8,35 @@ import Foundation
 import CoreData
 
 class Game: NSManagedObject, Decodable {
-    @NSManaged var id: Int16
-    @NSManaged var date: String
-    @NSManaged var homeTeam: String
-    @NSManaged var visitorTeam: String
-    @NSManaged var homeTeamScore: String
-    @NSManaged var visitorTeamScore: String
-    @NSManaged var status: String
-    @NSManaged var college: String // Ensure this is defined in your Core Data model if needed.
-
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case date = "date"
-        case homeTeam = "home_team"
-        case visitorTeam = "visitor_team"
-        case homeTeamScore = "home_team_score"
-        case visitorTeamScore = "visitor_team_score"
-        case status = "status"
-        case college = "college" // Include this if you want to decode the 'college' property
+        case id, date, season, home_team_score, visitor_team_score, home_team, visitor_team, status, college
     }
     
     required convenience init(from decoder: Decoder) throws {
+        // Obtain NSManagedObjectContext from decoder's userInfo
         guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
             throw DecoderConfigurationError.missingManagedObjectContext
         }
         
         self.init(context: context)
         
+        // Decoding values
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int16.self, forKey: .id)
-        self.date = try container.decode(String.self, forKey: .date)
-        self.homeTeam = try container.decode(String.self, forKey: .homeTeam)
-        self.visitorTeam = try container.decode(String.self, forKey: .visitorTeam)
+        self.date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
+        self.season = try container.decodeIfPresent(Int16.self, forKey: .season) ?? 0
         
-        do {
-            self.homeTeamScore = try container.decode(String.self, forKey: .homeTeamScore)
-            self.visitorTeamScore = try container.decode(String.self, forKey: .visitorTeamScore)
-            self.college = try container.decode(String.self, forKey: .college) // This needs to be part of your Core Data model
-            self.status = try container.decode(String.self, forKey: .status)
-        } catch {
-            print("Game didn't have score info")
-            print(error)
-        }
+        // Decoding nested objects (assuming home_team and visitor_team are represented as team names in JSON)
+        self.homeTeam = try container.decodeIfPresent(String.self, forKey: .home_team) ?? "N/A"
+        self.visitorTeam = try container.decodeIfPresent(String.self, forKey: .visitor_team) ?? "N/A"
+        
+        // Decoding scores; provide a default value if scores are absent
+        self.homeTeamScore = try container.decodeIfPresent(Int16.self, forKey: .home_team_score) ?? 0
+        self.visitorTeamScore = try container.decodeIfPresent(Int16.self, forKey: .visitor_team_score) ?? 0
+        
+        // Decoding other values
+        self.college = try container.decodeIfPresent(String.self, forKey: .college) ?? "Unknown"
+        self.status = try container.decodeIfPresent(String.self, forKey: .status) ?? "Scheduled"
     }
 }
+
