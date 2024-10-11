@@ -84,7 +84,38 @@ struct NetworkController {
         return result.data
     }
     
+    static func getGames() async throws -> [Game] {
+        // Initialize our session and url
+        let session = URLSession.shared
+        let url = URLComponents(string: "\(url)/games?start_date=2023-01-01")!
+        
+        var request = URLRequest(url: url.url!)
+        request.setValue(apiKey, forHTTPHeaderField: "Authorization")
+        
+        var data: Data
+        var response: URLResponse
+        
+        do {
+            let (httpData, httpResponse) = try await session.data(for: request)
+            data = httpData
+            response = httpResponse
+        } catch {
+            throw error
+        }
+       
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw NetworkErrors.FailedGettingGames
+        }
+        
+        let decoder = JSONDecoder()
+        decoder.userInfo[.managedObjectContext] = CoreDataStack.shared.persistentContainer.viewContext
+        let result = try decoder.decode(BallDontLieResult<Game>.self, from: data)
+        
+        return result.data
+    }
+    
     private enum NetworkErrors: Error {
         case FailedGettingTeams
+        case FailedGettingGames
     }
 }

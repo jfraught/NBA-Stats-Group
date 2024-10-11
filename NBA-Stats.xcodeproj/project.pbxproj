@@ -123,8 +123,8 @@
 			children = (
 				A9877E7B2CA45607002C60A6 /* FavoritesTableViewController.swift */,
 				A9877E792CA455F0002C60A6 /* GamesTableViewController.swift */,
-				FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */,
 				A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */,
+				FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */,
 				A379CC752B9F6227005D9F8B /* TeamsTableViewController.swift */,
 			);
 			path = ViewControllers;
