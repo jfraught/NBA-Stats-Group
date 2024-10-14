@@ -10,31 +10,7 @@ import CoreData
 
 class GamesTableViewController: UITableViewController {
     var games: [Game] = []
-    
     var isSelected: Bool = false // use this when we impliment stars / favorites to the cells in storyboard
-    
-    //    override func viewDidLoad() {
-    //        super.viewDidLoad()
-    //
-    //        tableView.reloadData()
-    //        Task {
-    //            do {
-    //                games = try await DataController.getGames()
-    //                if games.isEmpty {
-    //                    games = Game.mockGames
-    //                }
-    //                tableView.reloadData()
-    //            } catch let error as URLError {
-    //                print("SSL error occured \(error)")
-    //                games = Game.mockGames
-    //                tableView.reloadData()
-    //            } catch {
-    //                print("An error occured \(error)")
-    //                games = Game.mockGames
-    //                tableView.reloadData()
-    //            }
-    //        }
-    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,21 +23,20 @@ class GamesTableViewController: UITableViewController {
             do {
                 games = try await DataController.getGames()
                 if games.isEmpty {
-                    games = Game.mockGames(in: context) // Use mock data if no games are returned
+                    games = Game.mockGames(in: context)
                 }
                 tableView.reloadData()
             } catch let error as URLError {
                 print("SSL error occurred: \(error)")
-                games = Game.mockGames(in: context) // Use mock data in case of an error
+                games = Game.mockGames(in: context)
                 tableView.reloadData()
             } catch {
                 print("An error occurred: \(error)")
-                games = Game.mockGames(in: context) // Use mock data in case of an error
+                games = Game.mockGames(in: context)
                 tableView.reloadData()
             }
         }
     }
-    
     
     // MARK: - Table view data source
     
@@ -85,11 +60,11 @@ class GamesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 3 // past
+            return 3
         case 1:
-            return 3 // current
+            return 3
         case 2:
-            return 3 // future
+            return 3
         default:
             return 0
         }
@@ -107,11 +82,11 @@ class GamesTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            game = games[indexPath.row] // past
+            game = games[indexPath.row]
         case 1:
-            game = games[indexPath.row + 3] // current
+            game = games[indexPath.row + 3]
         case 2:
-            game = games[indexPath.row + 6] // future
+            game = games[indexPath.row + 6]
         default:
             fatalError("Unexpected section \(indexPath.section)")
         }
@@ -123,32 +98,4 @@ class GamesTableViewController: UITableViewController {
         
         return cell
     }
-    
-    
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
