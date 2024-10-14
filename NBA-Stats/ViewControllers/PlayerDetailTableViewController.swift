@@ -5,17 +5,10 @@
 //  Created by Derek Stengel on 9/23/24.
 //
 
-//let detailVC = PlayerDetailTableViewController()
-//detailVC.player = selectedPlayer // Pass the Player instance here
-//navigationController?.pushViewController(detailVC, animated: true)
-
-// add this code to navigate from PlayerDetailTableViewController and populate players properly
-
 import UIKit
 
 class PlayerDetailTableViewController: UITableViewController {
     var player: Player?
-    
     var playerDetails: [(title: String, value: String)] = []
 
     override func viewDidLoad() {
@@ -27,12 +20,12 @@ class PlayerDetailTableViewController: UITableViewController {
         }
         
         playerDetails = [
-            ("First Name", player.first_name ?? "No first name found"),
-            ("Last Name", player.last_name ?? "No last name found"),
-            ("Position", player.position ?? "Player Position Unavailable"),
-            ("Height", player.height ?? "Could not find player height"),
-            ("Weight", player.weight ?? "Could not find player weight"),
-            ("Jersey Number", player.jersey_number ?? "N/A"),
+            ("First Name", player.first_name ?? ""),
+            ("Last Name", player.last_name ?? ""),
+            ("Position", player.position ?? "Unavailable"),
+            ("Height", player.height ?? "Unavailable"),
+            ("Weight", player.weight ?? "Unavailable"),
+            ("Jersey Number", player.jersey_number ?? "Unavailable"),
             ("College", player.college ?? "N/A"),
             ("Country", player.country ?? "N/A"),
             ("Draft Year", player.draft_year != 0 ? "\(player.draft_year)" : "N/A"),

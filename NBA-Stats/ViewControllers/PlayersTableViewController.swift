@@ -11,6 +11,8 @@ class PlayersTableViewController: UITableViewController {
     var team: Team
     var players: [Player]?
     
+    var isSelected: Bool = false // use this when we impliment stars / favorites to the cells in storyboard
+    
     init?(team: Team, coder: NSCoder) {
         self.team = team
         super.init(coder: coder)
@@ -31,7 +33,6 @@ class PlayersTableViewController: UITableViewController {
                 print(error)
             }
         }
-        
     }
 
     // MARK: - Table view data source

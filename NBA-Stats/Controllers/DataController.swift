@@ -39,4 +39,20 @@ struct DataController {
         
         return newPlayers
     }
+    
+    static func getGames() async throws -> [Game] {
+        // First try to fetch games from core data
+        if let games = try CoreDataStack.shared.getGames(), !games.isEmpty {
+            print("Fetched games from Core Data: \(games.count)")
+            return games
+        }
+
+        // No games in Core Data, make a network request, save, and return
+        let games = try await NetworkController.getGames()
+        try CoreDataStack.shared.saveGames(games: games)
+        
+        print("Fetched games from network: \(games.count)")
+        return games
+    }
+
 }

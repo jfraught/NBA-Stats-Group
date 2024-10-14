@@ -53,6 +53,36 @@ extension CoreDataStack {
         return result as? [Team]
     }
     
+    func getGames() throws -> [Game]? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
+        let result = try persistentContainer.viewContext.fetch(fetchRequest)
+        return result as? [Game]
+    }
+    
+    func saveGames(games: [Game]) throws {
+        // Assuming there are no games in core data.
+        // If you want to refresh the games you should delete the teams in core data first and then save.
+        
+        for game in games {
+            let newGame = NSEntityDescription.insertNewObject(forEntityName: "Game", into: persistentContainer.viewContext)
+            newGame.setValue(game.id, forKey: "id")
+            newGame.setValue(game.date, forKey: "date")
+            newGame.setValue(game.season, forKey: "season")
+            newGame.setValue(game.homeTeamScore, forKey: "home_team_score")
+            newGame.setValue(game.visitorTeamScore, forKey: "visitor_team_score")
+            newGame.setValue(game.homeTeam, forKey: "home_team")
+            newGame.setValue(game.visitorTeam, forKey: "visitor_team")
+        }
+        
+        save()
+    }
+    
+    func getGames(matching predicate: NSPredicate) throws -> [Game] {
+        let fetchRequest = Game.fetchRequest()
+        fetchRequest.predicate = predicate
+        return try persistentContainer.viewContext.fetch(fetchRequest)
+    }
+    
     func saveTeams(teams: [Team]) throws {
         // Assuming there are no teams in core data.
         // If you want to refresh the teams you should delete the teams in core data first and then save.

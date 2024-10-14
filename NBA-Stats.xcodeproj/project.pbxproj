@@ -24,6 +24,7 @@
 		A379CC7A2BA0A197005D9F8B /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */; };
 		A9877E7A2CA455F0002C60A6 /* GamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9877E792CA455F0002C60A6 /* GamesTableViewController.swift */; };
 		A9877E7C2CA45607002C60A6 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9877E7B2CA45607002C60A6 /* FavoritesTableViewController.swift */; };
+		C59422BF2CA5A19A0066AC9E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59422BE2CA5A19A0066AC9E /* Game.swift */; };
 		FD3EFF312CA1B7A700248C56 /* PlayerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
 		A9877E792CA455F0002C60A6 /* GamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewController.swift; sourceTree = "<group>"; };
 		A9877E7B2CA45607002C60A6 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		C59422BE2CA5A19A0066AC9E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			children = (
 				A379CC6B2B9A6BBA005D9F8B /* Team.swift */,
 				A379CC772BA09916005D9F8B /* Player.swift */,
+				C59422BE2CA5A19A0066AC9E /* Game.swift */,
 				A379CC6D2B9B5B88005D9F8B /* Errors.swift */,
 				A379CC6F2B9B5E1C005D9F8B /* BallDontLieResult.swift */,
 			);
@@ -120,8 +123,8 @@
 			children = (
 				A9877E7B2CA45607002C60A6 /* FavoritesTableViewController.swift */,
 				A9877E792CA455F0002C60A6 /* GamesTableViewController.swift */,
-				FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */,
 				A379CC792BA0A197005D9F8B /* PlayersTableViewController.swift */,
+				FD3EFF302CA1B7A700248C56 /* PlayerDetailTableViewController.swift */,
 				A379CC752B9F6227005D9F8B /* TeamsTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -213,6 +216,7 @@
 				A379CC592B9A1BF0005D9F8B /* NBA_Stats.xcdatamodeld in Sources */,
 				A379CC4F2B9A1BEF005D9F8B /* AppDelegate.swift in Sources */,
 				A379CC512B9A1BEF005D9F8B /* SceneDelegate.swift in Sources */,
+				C59422BF2CA5A19A0066AC9E /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
